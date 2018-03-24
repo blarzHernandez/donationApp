@@ -2,8 +2,8 @@
 <form action="" method="post" id="loginForm">
   <div id="message"></div>
     <div class="form-group">
-    <label for="username">Username </label>
-    <input type="username" class="form-control" id="username" name="username" aria-describedby="username" placeholder="Enter username">
+    <label for="username">Username/email </label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Enter email">
     </div>
     <div class="form-group">
     <label for="password">Password</label>

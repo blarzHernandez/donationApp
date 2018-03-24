@@ -3,8 +3,8 @@
 <div id="message"></div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Username</label>
-      <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+      <label for="inputEmail4">Username/Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="email">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>

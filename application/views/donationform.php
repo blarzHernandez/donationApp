@@ -47,7 +47,43 @@
             </select>
         </div>
         
-        <button type="button" id="saveBtn" onClick="saveUser()" class="btn btn-primary">Save</button> 
+        <button type="button" id="saveBtn" onClick="saveDonation()" class="btn btn-primary">Save</button> 
 
     </div>
 </form>
+
+<script>
+/**
+  Guardar Datos de la Donacion
+   */
+  function saveDonation(){       
+               
+        $.ajax({
+            url:"<?php echo base_url("Donations/saveDonation");?>",
+            type:"POST",
+            datatype:'json',
+            data:$("form#donationForm").serialize(),            
+            success:function(data){
+                var obj = JSON.parse(data);     
+               
+              if(obj.response=='errors'){    
+                    mensajeError("message",obj.message);
+              }
+              else{
+              mensajeOk("message",obj.message);
+              $('#formUser')[0].reset();
+             }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              var mensa=catchError(jqXHR.status,errorThrown);
+              mensajeError("message","Error:" + mensa);
+                 
+          }
+          
+           
+            
+        });
+        
+    }
+
+</script>

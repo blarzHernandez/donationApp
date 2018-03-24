@@ -31,7 +31,7 @@ class UserController extends CI_Controller {
      */
     public function saveUser(){
 
-            $this->form_validation->set_rules('username', 'Username', 'required');
+            $this->form_validation->set_rules('email', 'Email', 'required');
             $this->form_validation->set_rules('password', 'Password', 'required');
             $this->form_validation->set_rules('names', 'Names', 'required');
             $this->form_validation->set_rules('surnames', 'Surname', 'required');
@@ -42,7 +42,7 @@ class UserController extends CI_Controller {
             if ($this->form_validation->run() == TRUE){
                 $this->load->model("user_model");
                 //Pick up our post params
-                $data["username"] = $this->input->post("username");
+                $data["username"] = $this->input->post("email");
                 $data["password"] = md5($this->input->post("password"));
                 $data["names"] = $this->input->post("names");  
                 $data["surnames"] = $this->input->post("surnames");              
@@ -73,10 +73,10 @@ class UserController extends CI_Controller {
     public function login(){
         $this->load->model("user_model");
         //Pick up our post params
-        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('email', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
   
-        $data["username"] = $this->input->post("username");
+        $data["username"] = $this->input->post("email");
         $data["password"] = md5($this->input->post("password"));
         
         if ($this->form_validation->run() == TRUE){
