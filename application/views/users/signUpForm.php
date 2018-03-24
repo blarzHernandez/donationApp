@@ -4,7 +4,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Username</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+      <input type="text" class="form-control" id="username" name="username" placeholder="Username">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>
@@ -67,7 +67,7 @@
   </div>
   
   <button type="button" id="saveBtn" onClick="saveUser()" class="btn btn-primary">Save</button> or <br><br>
-  <a id="signUpBtn" onClick="saveUser()" class="btn btn-outline-primary">Log In</a>
+  <a id="signUpBtn" onClick="home()" class="btn btn-outline-primary">Log In</a>
 </form>
 
 <script>
@@ -94,6 +94,7 @@ $(document).ready(function(){
               }
               else{
               mensajeOk("message",obj.message);
+              $('#formUser')[0].reset();
              }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -106,5 +107,9 @@ $(document).ready(function(){
             
         });
         
+    }
+
+    function home(){
+      window.location.replace("http://localhost/donationApp");
     }
 </script>

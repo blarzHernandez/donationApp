@@ -13,6 +13,10 @@
     <a id="signUpBtn" href='usercontroller/signupRenderView' class="btn btn-outline-primary">Register</a>
 </form>
 <script>
+$(document).ready(function(){
+ 
+
+})
  /**
   Guardar Datos del Usuario
    */
@@ -30,7 +34,7 @@
                     mensajeError("message",obj.message);
               }
               else{
-              mensajeOk("message",obj.message);
+                window.location.replace("home");
              }
             },
             error: function (jqXHR, textStatus, errorThrown) {

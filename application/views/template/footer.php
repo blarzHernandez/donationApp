@@ -10,7 +10,7 @@ include(APPPATH.'config/constants.php');
     background-color: #f5f5f5;
     bottom: -100px;
     height: 60px;
-    position: absolute;
+    position: 'fixed';
     width: 100%;
 }
 </style>
