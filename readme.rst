@@ -9,7 +9,7 @@ Instalacion
 
 2- Copiar en el la carpeta de su web server
 
-3- Ejecutarlo en la ruta : http://localhost/donationsApp/
+3- Ejecutarlo en la ruta : http://localhost/donationApp/
 
 
 ###################
