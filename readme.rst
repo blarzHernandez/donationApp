@@ -35,10 +35,17 @@ Base de Datos
 
 3- Actualice los datos de conexion a la BD si son distintos de: username:root y password: ''. El archivo se encuentra en la ruta donationApp/application/config/database.php
 
+* NOMBRE BASE DE DATOS
+donationdb
+
+
+
 
 DATOS DE PRUEBA
-username:blarz@gmail.com
-password:123
+
+- username:blarz@gmail.com
+
+- password:123
 
 
 ************
