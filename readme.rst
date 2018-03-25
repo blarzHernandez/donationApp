@@ -1,11 +1,15 @@
 ###################
+Donation App
+###################
+
+###################
 Stack
 ###################
 - PHP5
 - HTML
 - CSS3
 - BOOTSTRAP 4
-- JQUERY 3
+- JQUERY 
 - MYSQL
 
 
@@ -26,8 +30,11 @@ Instalacion
 Base de Datos
 ************
 1- Asegurese que este corriendo el servicio/base de datos de MYSQL 
+
 2- Importe el archivo(script) de base de datos localizado en la carpeta principal del proyecto, llamado donationdb.sql
+
 3- Actualice los datos de conexion a la BD si son distintos de: username:root y password: ''. El archivo se encuentra en la ruta donationApp/application/config/database.php
+
 
 DATOS DE PRUEBA
 username:blarz@gmail.com
@@ -38,6 +45,7 @@ password:123
  Servicio REST
 ************
 1- Obtener todas las donaciones, ejecute la siguiente URL: http://localhost/donationApp/servicexxx
+
 2 - Obtener una Donacion Especifica : http://localhost/donationApp/servicexxx/find/3
 
 
