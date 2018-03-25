@@ -94,8 +94,38 @@ public function checkLastDateDonation($recipient,$country,$username){
                         }    
                 
         }
+
+/**
+ * Obtener todos las Donaciones
+ */
+public function getAllDonations() {
+        $query = $this->db->get('donation');      
+        return $query->result_array();
+    }
+
+
+    public function getDonation($id) {
+        $this->db->select('donation.donation_id,recipient.name recipient ,donor.names donor_name, donor.surnames, donation.amount,country.name as country_name, donation.donation_date');
+        $this->db->from('donation');
+        $this->db->join('recipient', 'recipient.recipient_id = donation.recipient_id');
+        $this->db->join('country', 'country.country_id = donation.country_id');
+        $this->db->join('donor', 'donor.country_id = donation.country_id');
+        $this->db->where('donation_id', $id);
+        $res = $this->db->get();
+
+        if($res->num_rows() > 0){
+                return $res->result_array();
+        }else{
+                return NULL;
+        }
+        
+    }
+
+    
        
 }
+
+
 
 
 
