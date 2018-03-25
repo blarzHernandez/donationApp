@@ -1,7 +1,11 @@
 <h1>Please Fill out the Form</h1>
 <form action="saveUser" method="post" id="formUser">
 <div id="message"></div>
-  <div class="form-row">
+
+<div class="card">
+<h5 class="card-header">User Data</h5>
+<div class="card-body">
+<div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Username/Email</label>
       <input type="email" class="form-control" id="email" name="email" placeholder="email">
@@ -11,7 +15,14 @@
       <input type="password" class="form-control" id="password" name="password" placeholder="Password">
     </div>
   </div>
+  
+</div>
+</div>
 
+
+<div class="card">
+  <h5 class="card-header">Personal Information</h5>
+  <div class="card-body">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Names</label>
@@ -31,7 +42,7 @@
     <div class="form-group col-md-6">
     <label for="inputState">Country</label>   
     <select id="country" name="country" class="form-control">
-      <option selected>Choose...</option>
+      <option value="null" selected>Choose...</option>
       <?php 
  
         if(isset($countriesList) && is_array($countriesList) && count($countriesList) > 0){
@@ -47,9 +58,9 @@
     </select>
     </div>
     <div class="form-group col-md-6">
-      <label for="inputState">department</label>
+      <label for="inputState">Department</label>
       <select id="department" name="department" class="form-control">
-        <option selected>Choose...</option>
+        <option  value="null" selected>Choose...</option>
         <?php 
           if(isset($departmentsList) && is_array($departmentsList) && count($departmentsList) > 0){
               foreach ($departmentsList as $key => $value) {
@@ -63,11 +74,12 @@
        
       </select>
     </div>
+    <button type="button" id="saveBtn" onClick="saveUser()" class="btn btn-outline-primary">Save Data</button> || 
+    <button type="button" id="signUpBtn" class="btn btn-outline-secondary" onClick="home()">Log In</button>
     
   </div>
-  
-  <button type="button" id="saveBtn" onClick="saveUser()" class="btn btn-primary">Save</button> or <br><br>
-  <a id="signUpBtn" onClick="home()" class="btn btn-outline-primary">Log In</a>
+</div>
+</div>
 </form>
 
 <script>
@@ -80,8 +92,12 @@ $(document).ready(function(){
   Guardar Datos del Usuario
    */
   function saveUser(){       
-               
-        $.ajax({
+    var country = $("#country option:selected" ).val();
+    var department = $("#department option:selected" ).val();    
+    if(country === 'null' || department === 'null'){
+      mensajeError("message","Por Favor seleccione un pais o departamento valido");
+    }else{
+      $.ajax({
             url:"<?php echo base_url("userController/saveUser");?>",
             type:"POST",
             datatype:'json',
@@ -107,6 +123,8 @@ $(document).ready(function(){
             
         });
         
+    }
+      
     }
 
     function home(){
