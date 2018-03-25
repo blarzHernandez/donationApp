@@ -1,4 +1,16 @@
 ###################
+Guia de Uso
+###################
+
+************
+Instalacion
+************
+1- Clonar el repositorio : git clone https://github.com/blarzHernandez/donationApp.git o descargue el archivo ZIP
+2- Copiar en el la carpeta de su web server
+3- Ejecutarlo en la ruta : http:localhost/donationsApp/
+
+
+###################
 What is CodeIgniter
 ###################
 
