@@ -26,6 +26,12 @@ class UserController extends CI_Controller {
             $this->load->view('template/main',$data);//render view
     }
 
+    public function renderView(){
+
+        $data["dinamic"]= "donations/kindUser"; // view
+        $this->load->view('template/main',$data);//render view
+    }
+
     /**
      * Guardar datos del Usuario
      */

@@ -1,35 +1,46 @@
 
-<h4>My Donations</h4>
-<table id="example" class="table table-striped table-bordered" style="width:100%">
+<h4>My Donations Made</h4>
+<table id="donationsTable" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Donation_id</th>
+                <th>Recipient</th>
+                <th>Amount</th>
+                <th>Country</th>
+                <th>Date</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-            </tr>
+        <tbody>          
            
         </tbody>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </tfoot>
     </table>
+
+
+<script>
+
+$(document).ready(function () {
+            var table = $('#donationsTable').DataTable(
+                    {
+                        dom: "Bfrtip",
+                        bProcessing: true,
+                        select: {
+                            style: 'os'
+                        },
+                        order: [[1, 'desc']],
+                        aoColumns: [
+                            null,
+                            null,                           
+                            null,
+                            null,
+                            null
+                        ],
+                        ajax: {
+                            url: '<?php echo base_url("Donations/getMyDonations"); ?>',
+                            error: function (xhr, status, error) {
+                                mensajeAlert(xhr.responseText, "Alerta!");
+                            }
+                        }
+                    }
+               
+            )});
+</script>

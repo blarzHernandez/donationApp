@@ -10,7 +10,7 @@
     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
     </div>
     <button type="button" onClick="login()" class="btn btn-primary">Sig in</button>
-    <a id="signUpBtn" href='usercontroller/signupRenderView' class="btn btn-outline-primary">Register</a>
+    <a id="signUpBtn" href='usercontroller/renderView' class="btn btn-outline-primary">Register</a>
 </form>
 <script>
 $(document).ready(function(){
