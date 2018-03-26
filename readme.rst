@@ -5,7 +5,7 @@ Donation App
 ###################
 Stack
 ###################
-- PHP5
+- PHP5 / Codeigniter 3
 - HTML
 - CSS3
 - BOOTSTRAP 4
